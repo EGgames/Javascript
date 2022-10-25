@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--SEO-->
+  <meta name="description" content="Wolf Informatica - Expertos en mantenimiento informatico">
+  <meta name="keyword"
+    content="gamershop, mantenimiento informatico, venta de insumos informaticos, armado de equipos informaticos">
+  <!--SEO-->
+
+  <title>Wolf Informatica - Inicio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="/img/favicon.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <!--Estilos-->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <!--Estilos-->
+</head>
+
+<body>
+
+  <!--Header del proyecto-->
+  <!--Contiene todo el menu principal superior de la pagina-->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="../index.html">
+        <div style="font-family: 'Ngage';">
+          <a href="../index.html">Wolf Informatica</a>
+        </div>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="../index.html" class="active">Home</a></li>
+          <li><a href="/pages/tienda.html">Tienda</a></li>
+
+          <li class="dropdown"><a href="/pages/mantenimiento.html"><span>Servicios</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li class="dropdown"><a href="/pages/mantenimiento.html#mantenimiento"><span>Mantenimiento</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="/pages/mantenimiento.html#solicitar_mantenimiento">Solicitar Mantenimiento</a></li>
+                  <li><a href="/pages/mantenimiento.html#estado_mantenimiento">Estado de Mantenimiento</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/pages/quienes_somos.html">Quienes somos</a></li>
+          <li><a href="/pages/contacto.html">Contacto</a></li>
+          <li><a class="button" href="/pages/login.html">Ingresar</a></li>
+          <li><a class="button" href="/pages/registro.html">Registrarse</a></li>
+          <li><a class="button" href="#">Carrito</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+  <!--Fin del header del proyecto-->
+
+  <!--Inicio del main-->
+  <main>
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="container">
+          <h1>Carrito</h1>
+          <hr>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Accion</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer">
+                <th scope="row" colspan="5">Carrito vacio - Comience con su compra</th>
+              </tr>
+            </tfoot>
+          </table>
+      <div class="row" id="cards">
+      
+      </div>
+        </div>
+      
+        <template id="template-card">
+          <div class="col-12 mb-2 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <img src="" alt="" class="card-img-top">
+                <h5 style="color:#000 ;">Titulo</h5>
+                <p style="color:#000 ;">Precio</p>
+                <button class="btn btn-dark" data-id="">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </template>
+      
+        <template id="template-footer">
+        
+          <th scope="row" colspan="2">Total Productos</th>
+          <td>10</td>
+          <td>
+            <button class="btn btn-danger btn-sm" id="vaciar-carrito">Vaciar todo</button>
+          </td>
+        
+          <td class="font-weight-bold">$ <span>5000</span>      <button class="btn btn-info btn-sm" id="comprar-carrito">Comprar</button>
+          </td>
+          
+        </template>
+        
+      
+      
+      
+        <template id="template-carrito">
+      <tr>
+        <th scope="row">id</th>
+        <td class="ti">cafe</td>
+        <td>1</td>
+        <td>
+          <button class="btn btn-info btn-sm mas">
+            +
+          </button>
+          <button class="btn btn-danger btn-sm menos" id="menos">
+            -
+          </button>
+        </td>
+        <td>$ <span>500</span></td>
+      </tr>
+        </template>
+      </div>
+    </section>
+    <!--Fin del main-->
+
+   
+
+    <!--Inicio del footer-->
+    <footer id="footer" class="footer">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="col-lg-5 col-md-12 footer-info">
+              <div style="font-family: 'Ngage'; font-size: 20px;">
+                <a href="/index.html">Wolf Informatica</a>
+              </div>
+            </a>
+            <p>Sitio web oficial de Wolf informatica. Para tener todas las novedades sobre nuestros servicios y
+              productos,
+              siguenos en nuestras redes sociales: </p>
+            <div class="social-links d-flex mt-4">
+              <a href="https://www.twitter.com/wolf.informatica.uy/" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.facebook.com/wolf.informatica.uy/" class="facebook"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/wolf.informatica.uy/" class="instagram"><i
+                  class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Enlaces utiles</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="/pages/tienda.html">Tienda</a></li>
+              <li><a href="/pages/mantenimiento.html">Servicios</a></li>
+              <li><a href="/pages/quienes_somos.html">Quienes somos</a></li>
+              <li><a href="/pages/contacto.html">Contacto</a></li>
+              <li><a href="#">Politicas de privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Nuestros servicios</h4>
+            <ul>
+              <li><a href="/pages/mantenimiento.html#mantenimiento">Mantenimiento informatico</a></li>
+              <li><a href="/pages/mantenimiento.html#solicitar_mantenimiento">Solicitud de mantenimiento</a></li>
+              <li><a href="/pages/mantenimiento.html#estado_mantenimiento">Estado de mantenimiento</a></li>
+              <li><a href="/pages/tienda.html">Venta de componentes</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contactanos</h4>
+            <p>
+              Exodo 1480bis <br>
+              Ciudad de Paysandu, 60000<br>
+              Uruguay <br><br>
+              <strong>Whatsapp y llamadas:</strong> +598 98 261 583<br>
+              <strong>Email: </strong><a
+                href="mailto:emiliano.galmarini@gmail.com">wolf.informatica.uy@gmail.com</a><br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Wolf Informatica</span></strong>. Todos los derechos reservados
+        </div>
+        <div class="credits">
+          Diseñado por <a href="#">Emiliano Galmarini - Alumno CoderHouse - Comision DW 38180 / JS 41805</a>
+        </div>
+      </div>
+
+    </footer>
+    <!--Fin del footer-->
+
+    <!--Declaraciones Javascript-->
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/vendor/aos/aos.js"></script>
+    <script src="/vendor/php-email-form/validate.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/app.js"></script>
+    <!--Fin de declaraciones Javascript-->
+</body>
+
+</html>
