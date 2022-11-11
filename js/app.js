@@ -86,7 +86,6 @@ const pintarCarrito = () => {
     items.appendChild(fragment)
 
     pintarFooter()
-    pintarBuy()
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
@@ -114,13 +113,18 @@ const pintarFooter = () => {
     })
     const btnComprar = document.querySelector('#comprar-carrito')
     btnComprar.addEventListener('click', () => {
-        alert("Esta funcion esta siendo desarrollada. Vuelva mas tarde")
+        btnComprarCarrito()
     })
     
     
 }
 
-
+const btnComprarCarrito = e => {
+    swal("Esta funcion esta siendo desarrollada, vuelva mas adelante!", {
+        buttons: false,
+        timer: 1000,
+      });
+}
 
 
 const btnAccion = e => {

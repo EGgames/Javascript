@@ -1,3 +1,4 @@
+/*
 function borrar(id) {var elem = document.getElementById(id); return elem.parentNode.removeChild(elem);}
 
 function msj(titulo, contenido, idioma) {
@@ -16,3 +17,10 @@ document.getElementById('modal-back').onclick=function(){ borrar('modal'); }
 
 //probando la función, creando una alerta
 msj('Soy una alerta de advertencia. ', 'Cerrar');
+*/
+function cartAdd() {
+    swal("Producto Agregado al Carrito!", {
+        buttons: false,
+        timer: 1000,
+      });
+}
